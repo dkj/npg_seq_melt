@@ -19,7 +19,7 @@ use_ok('npg_seq_melt::merge::library');
 
 Log::Log4perl::init_once('./t/log4perl_test.conf');
 my $logger = Log::Log4perl->get_logger('dnap');
-my $irods = WTSI::NPG::iRODS->new(logger => $logger);
+my $irods = WTSI::NPG::iRODS->new(strict_baton_version => 0, logger => $logger);
 
 $ENV{TEST_DIR} = q(t/data);
 my $tmp_dir = tempdir( CLEANUP => 1);
